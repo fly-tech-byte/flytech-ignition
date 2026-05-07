@@ -142,8 +142,8 @@
     opacity: 0.55;
     pointer-events: none;
   }
-  .orb-violet { background: #6C63FF; }
-  .orb-cyan { background: #00D4FF; }
+  .orb-violet { background: #FF7A1A; }
+  .orb-cyan { background: #FFB347; }
 
   .card-hover { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
   .card-hover:hover { transform: translateY(-4px); border-color: oklch(1 0 0 / 0.18); box-shadow: 0 18px 50px -20px oklch(0.62 0.22 285 / 0.45); }
