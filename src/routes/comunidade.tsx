@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { BookOpen, CheckCircle2, Lock, Network, Sparkles, Users } from "lucide-react";
+import { BookOpen, CheckCircle2, Download, Network, Sparkles, Users } from "lucide-react";
 import { Orbs } from "@/components/site/Orbs";
 import { FadeIn, Section, SectionTitle } from "@/components/site/Section";
 
@@ -18,12 +18,41 @@ export const Route = createFileRoute("/comunidade")({
 });
 
 const EBOOKS = [
-  { t: "Como a IA pode transformar sua gestão em 30 dias", c: "IA" },
-  { t: "Processos que escalam: guia para pequenas empresas", c: "Processos" },
-  { t: "Vendas com IA: da prospecção ao fechamento", c: "Vendas" },
-  { t: "Finanças sem mistério: entenda seus números com tecnologia", c: "Finanças" },
-  { t: "Network inteligente: construa conexões que geram negócios", c: "Gestão" },
-  { t: "Automatize para crescer: primeiros passos com automação", c: "IA" },
+  {
+    t: "Como a IA pode transformar sua gestão em 30 dias",
+    c: "IA",
+    d: "Um plano prático para implantar Inteligência Artificial no seu negócio em apenas um mês.",
+    file: "/ebooks/ia-30-dias.pdf",
+    cover: "/ebooks/covers/ia-30-dias.jpg",
+  },
+  {
+    t: "Transforme a sua gestão com IA",
+    c: "IA",
+    d: "Guia visual com aplicações reais de IA para micro e pequenas empresas.",
+    file: "/ebooks/transforme-gestao-ia.pdf",
+    cover: "/ebooks/covers/transforme-gestao-ia.jpg",
+  },
+  {
+    t: "Processos que escalam",
+    c: "Processos",
+    d: "Como estruturar e padronizar processos que sustentam o crescimento da sua empresa.",
+    file: "/ebooks/processos-que-escalam.pdf",
+    cover: "/ebooks/covers/processos-que-escalam.jpg",
+  },
+  {
+    t: "Vendas com IA",
+    c: "Vendas",
+    d: "Da prospecção ao fechamento: use Inteligência Artificial para vender mais e melhor.",
+    file: "/ebooks/vendas-com-ia.pdf",
+    cover: "/ebooks/covers/vendas-com-ia.jpg",
+  },
+  {
+    t: "Gestão Financeira com Tecnologia",
+    c: "Finanças",
+    d: "Entenda seus números e tome decisões com clareza usando ferramentas modernas.",
+    file: "/ebooks/gestao-financeira.pdf",
+    cover: "/ebooks/covers/gestao-financeira.jpg",
+  },
 ];
 
 function ComunidadePage() {
