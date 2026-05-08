@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { BookOpen, CheckCircle2, Lock, Network, Sparkles, Users } from "lucide-react";
+import { BookOpen, CheckCircle2, Download, Network, Sparkles, Users } from "lucide-react";
 import { Orbs } from "@/components/site/Orbs";
 import { FadeIn, Section, SectionTitle } from "@/components/site/Section";
 
@@ -18,12 +18,41 @@ export const Route = createFileRoute("/comunidade")({
 });
 
 const EBOOKS = [
-  { t: "Como a IA pode transformar sua gestão em 30 dias", c: "IA" },
-  { t: "Processos que escalam: guia para pequenas empresas", c: "Processos" },
-  { t: "Vendas com IA: da prospecção ao fechamento", c: "Vendas" },
-  { t: "Finanças sem mistério: entenda seus números com tecnologia", c: "Finanças" },
-  { t: "Network inteligente: construa conexões que geram negócios", c: "Gestão" },
-  { t: "Automatize para crescer: primeiros passos com automação", c: "IA" },
+  {
+    t: "Como a IA pode transformar sua gestão em 30 dias",
+    c: "IA",
+    d: "Um plano prático para implantar Inteligência Artificial no seu negócio em apenas um mês.",
+    file: "/ebooks/ia-30-dias.pdf",
+    cover: "/ebooks/covers/ia-30-dias.jpg",
+  },
+  {
+    t: "Transforme a sua gestão com IA",
+    c: "IA",
+    d: "Guia visual com aplicações reais de IA para micro e pequenas empresas.",
+    file: "/ebooks/transforme-gestao-ia.pdf",
+    cover: "/ebooks/covers/transforme-gestao-ia.jpg",
+  },
+  {
+    t: "Processos que escalam",
+    c: "Processos",
+    d: "Como estruturar e padronizar processos que sustentam o crescimento da sua empresa.",
+    file: "/ebooks/processos-que-escalam.pdf",
+    cover: "/ebooks/covers/processos-que-escalam.jpg",
+  },
+  {
+    t: "Vendas com IA",
+    c: "Vendas",
+    d: "Da prospecção ao fechamento: use Inteligência Artificial para vender mais e melhor.",
+    file: "/ebooks/vendas-com-ia.pdf",
+    cover: "/ebooks/covers/vendas-com-ia.jpg",
+  },
+  {
+    t: "Gestão Financeira com Tecnologia",
+    c: "Finanças",
+    d: "Entenda seus números e tome decisões com clareza usando ferramentas modernas.",
+    file: "/ebooks/gestao-financeira.pdf",
+    cover: "/ebooks/covers/gestao-financeira.jpg",
+  },
 ];
 
 function ComunidadePage() {
@@ -59,21 +88,22 @@ function ComunidadePage() {
       </Section>
 
       <Section>
-        <FadeIn><SectionTitle eyebrow="Biblioteca" title="Conteúdo disponível para membros" /></FadeIn>
+        <FadeIn><SectionTitle eyebrow="Biblioteca" title="eBooks gratuitos para download" /></FadeIn>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {EBOOKS.map((b, i) => (
             <FadeIn key={i} delay={i * 0.05}>
-              <div className="glass card-hover overflow-hidden rounded-2xl">
-                <div className="relative grid h-44 place-items-center" style={{ background: "var(--gradient-primary)" }}>
-                  <BookOpen className="h-10 w-10 text-white/80" />
-                  <span className="absolute right-3 top-3 rounded-full bg-black/30 px-2 py-0.5 text-[10px] uppercase tracking-wide backdrop-blur-sm">{b.c}</span>
+              <div className="glass card-hover flex h-full flex-col overflow-hidden rounded-2xl">
+                <div className="relative h-56 overflow-hidden" style={{ background: "var(--gradient-primary)" }}>
+                  <img src={b.cover} alt={`Capa do eBook ${b.t}`} loading="lazy" className="h-full w-full object-cover object-top" />
+                  <span className="absolute right-3 top-3 rounded-full bg-black/40 px-2 py-0.5 text-[10px] uppercase tracking-wide text-white backdrop-blur-sm">{b.c}</span>
                 </div>
-                <div className="p-5">
+                <div className="flex flex-1 flex-col p-5">
                   <h3 className="text-base font-semibold leading-snug">{b.t}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">Material prático para aplicar imediatamente no seu negócio.</p>
-                  <span className="mt-4 inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">
-                    <Lock className="h-3 w-3" /> Disponível para membros
-                  </span>
+                  <p className="mt-2 text-sm text-muted-foreground">{b.d}</p>
+                  <a href={b.file} download target="_blank" rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold btn-gradient">
+                    <Download className="h-4 w-4" /> Baixar eBook
+                  </a>
                 </div>
               </div>
             </FadeIn>

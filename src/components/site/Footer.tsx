@@ -26,16 +26,16 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-semibold">Contato</h4>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-            <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> flytech.now@gmail.com</li>
-            <li className="flex items-center gap-2"><Phone className="h-4 w-4" /> +55 61 9956-2-1339</li>
-            <li className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Brasília, DF — Brasil</li>
+            <li className="flex items-center gap-2"><Mail className="h-4 w-4" /><span>flytech.now@gmail.com</span></li>
+            <li className="flex items-center gap-2"><Phone className="h-4 w-4" /><span>+55 61 9956-2-1339</span></li>
+            <li className="flex items-center gap-2"><MapPin className="h-4 w-4" /><span>Brasília, DF — Brasil</span></li>
           </ul>
         </div>
         <div>
           <h4 className="text-sm font-semibold">Online</h4>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li>flytech.com.br</li>
-            <li className="flex items-center gap-2"><Instagram className="h-4 w-4" /> @flytech.now</li>
+            <li className="flex items-center gap-2"><Instagram className="h-4 w-4" /><span>@flytech.now</span></li>
           </ul>
         </div>
       </div>
