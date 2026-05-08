@@ -88,21 +88,22 @@ function ComunidadePage() {
       </Section>
 
       <Section>
-        <FadeIn><SectionTitle eyebrow="Biblioteca" title="Conteúdo disponível para membros" /></FadeIn>
+        <FadeIn><SectionTitle eyebrow="Biblioteca" title="eBooks gratuitos para download" /></FadeIn>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {EBOOKS.map((b, i) => (
             <FadeIn key={i} delay={i * 0.05}>
-              <div className="glass card-hover overflow-hidden rounded-2xl">
-                <div className="relative grid h-44 place-items-center" style={{ background: "var(--gradient-primary)" }}>
-                  <BookOpen className="h-10 w-10 text-white/80" />
-                  <span className="absolute right-3 top-3 rounded-full bg-black/30 px-2 py-0.5 text-[10px] uppercase tracking-wide backdrop-blur-sm">{b.c}</span>
+              <div className="glass card-hover flex h-full flex-col overflow-hidden rounded-2xl">
+                <div className="relative h-56 overflow-hidden" style={{ background: "var(--gradient-primary)" }}>
+                  <img src={b.cover} alt={`Capa do eBook ${b.t}`} loading="lazy" className="h-full w-full object-cover object-top" />
+                  <span className="absolute right-3 top-3 rounded-full bg-black/40 px-2 py-0.5 text-[10px] uppercase tracking-wide text-white backdrop-blur-sm">{b.c}</span>
                 </div>
-                <div className="p-5">
+                <div className="flex flex-1 flex-col p-5">
                   <h3 className="text-base font-semibold leading-snug">{b.t}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">Material prático para aplicar imediatamente no seu negócio.</p>
-                  <span className="mt-4 inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">
-                    <Lock className="h-3 w-3" /> Disponível para membros
-                  </span>
+                  <p className="mt-2 text-sm text-muted-foreground">{b.d}</p>
+                  <a href={b.file} download target="_blank" rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold btn-gradient">
+                    <Download className="h-4 w-4" /> Baixar eBook
+                  </a>
                 </div>
               </div>
             </FadeIn>
