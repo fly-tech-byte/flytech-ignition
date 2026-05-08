@@ -35,7 +35,7 @@ export function Footer() {
           <h4 className="text-sm font-semibold">Online</h4>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li>flytech.com.br</li>
-            <li className="flex items-center gap-2"><Instagram className="h-4 w-4" /> @flytech.now</li>
+            <li className="flex items-center gap-2"><Instagram className="h-4 w-4" /><span>@flytech.now</span></li>
           </ul>
         </div>
       </div>
