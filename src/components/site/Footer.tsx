@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Mail, MapPin, Phone, Zap } from "lucide-react";
+import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import logo from "@/assets/flytech-logo.png";
 
 export function Footer() {
   return (
@@ -7,10 +8,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-1">
           <Link to="/" className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-lg" style={{ background: "var(--gradient-primary)" }}>
-              <Zap className="h-5 w-5 text-white" strokeWidth={2.5} />
-            </span>
-            <span className="text-lg font-bold">FlyTech</span>
+            <img src={logo} alt="FlyTech" className="h-12 w-auto" />
           </Link>
           <p className="mt-3 text-sm text-muted-foreground">Tecnologia que faz empresas crescerem.</p>
         </div>
