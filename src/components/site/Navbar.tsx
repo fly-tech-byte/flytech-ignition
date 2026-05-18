@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, ShoppingCart, Zap, X } from "lucide-react";
+import { Menu, ShoppingCart, X } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/lib/cart";
+import logo from "@/assets/flytech-logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -20,10 +21,7 @@ export function Navbar() {
       <div className="glass-strong border-b border-white/5">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
           <Link to="/" className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-lg" style={{ background: "var(--gradient-primary)" }}>
-              <Zap className="h-5 w-5 text-white" strokeWidth={2.5} />
-            </span>
-            <span className="text-lg font-bold tracking-tight">FlyTech</span>
+            <img src={logo} alt="FlyTech" className="h-10 w-auto" />
           </Link>
 
           <div className="hidden items-center gap-1 md:flex">
