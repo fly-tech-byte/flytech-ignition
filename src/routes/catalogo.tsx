@@ -120,11 +120,11 @@ function CatalogoPage() {
         <div className="relative mx-auto max-w-7xl px-4 pb-12 pt-20 text-center sm:px-6">
           <FadeIn>
             <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-muted-foreground">
-              <Sparkles className="h-3.5 w-3.5 text-[color:var(--cyan)]" /> Catálogo Inicial de Soluções
+              <Sparkles className="h-3.5 w-3.5 text-[color:var(--cyan)]" /> Soluções FlyTech
             </span>
-            <h1 className="mt-6 text-4xl font-bold sm:text-6xl">Catálogo <span className="gradient-text">FlyTech</span></h1>
+            <h1 className="mt-6 text-4xl font-bold sm:text-6xl">Soluções <span className="gradient-text">FlyTech</span></h1>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-              Funcionalidades e pacotes prontos para automatizar atendimento, vendas, cobrança e gestão do seu negócio.
+              Contrate soluções avulsas ou pacotes prontos para automatizar atendimento, vendas, cobrança e gestão do seu negócio.
             </p>
             <a
               href="/catalogo-flytech.pdf"
@@ -138,11 +138,11 @@ function CatalogoPage() {
       </section>
 
       <Section className="!py-12">
-        <FadeIn><SectionTitle eyebrow="Funcionalidades" title="O que podemos fazer pelo seu negócio" /></FadeIn>
+        <FadeIn><SectionTitle eyebrow="Soluções avulsas" title="Contrate apenas o que precisa" subtitle="Cada solução pode ser contratada individualmente — sem precisar de um pacote completo." /></FadeIn>
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {FEATURES.map((f, i) => (
             <FadeIn key={f.title} delay={i * 0.05}>
-              <div className="glass card-hover h-full rounded-2xl p-6">
+              <div className="glass card-hover flex h-full flex-col rounded-2xl p-6">
                 <div className="flex items-start gap-4">
                   <div className="grid h-11 w-11 shrink-0 place-items-center rounded-lg" style={{ background: "var(--gradient-soft)" }}>
                     <f.icon className="h-5 w-5 text-[color:var(--cyan)]" />
@@ -159,6 +159,21 @@ function CatalogoPage() {
                       ))}
                     </ul>
                   </div>
+                </div>
+                <div className="mt-5 flex items-center justify-between gap-3 border-t border-white/5 pt-4">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-2xl font-bold">{formatBRL(f.price)}</span>
+                    <span className="text-xs text-muted-foreground">/mês</span>
+                  </div>
+                  <button
+                    onClick={() => {
+                      add({ id: f.id, name: f.title, category: "Solução avulsa", price: f.price, description: f.desc });
+                      open();
+                    }}
+                    className="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold btn-gradient"
+                  >
+                    Comprar avulso
+                  </button>
                 </div>
               </div>
             </FadeIn>
