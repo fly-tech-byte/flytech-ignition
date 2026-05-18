@@ -24,6 +24,7 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <>
+      <IntroVideoModal />
       {/* HERO */}
       <section className="relative overflow-hidden">
         <Orbs />
