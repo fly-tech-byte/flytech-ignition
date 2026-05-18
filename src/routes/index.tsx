@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import { Orbs } from "@/components/site/Orbs";
 import { FadeIn, Section, SectionTitle } from "@/components/site/Section";
+import { IntroVideoModal } from "@/components/site/IntroVideoModal";
 import { PRODUCTS } from "@/lib/products";
 
 export const Route = createFileRoute("/")({
@@ -23,6 +24,7 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <>
+      <IntroVideoModal />
       {/* HERO */}
       <section className="relative overflow-hidden">
         <Orbs />
