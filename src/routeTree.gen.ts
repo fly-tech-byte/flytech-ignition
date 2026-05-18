@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SolucoesRouteImport } from './routes/solucoes'
 import { Route as ConsultoriaRouteImport } from './routes/consultoria'
 import { Route as ComunidadeRouteImport } from './routes/comunidade'
+import { Route as CatalogoRouteImport } from './routes/catalogo'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SolucoesRoute = SolucoesRouteImport.update({
@@ -29,6 +30,11 @@ const ComunidadeRoute = ComunidadeRouteImport.update({
   path: '/comunidade',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CatalogoRoute = CatalogoRouteImport.update({
+  id: '/catalogo',
+  path: '/catalogo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,12 +43,14 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/catalogo': typeof CatalogoRoute
   '/comunidade': typeof ComunidadeRoute
   '/consultoria': typeof ConsultoriaRoute
   '/solucoes': typeof SolucoesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/catalogo': typeof CatalogoRoute
   '/comunidade': typeof ComunidadeRoute
   '/consultoria': typeof ConsultoriaRoute
   '/solucoes': typeof SolucoesRoute
@@ -50,20 +58,28 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/catalogo': typeof CatalogoRoute
   '/comunidade': typeof ComunidadeRoute
   '/consultoria': typeof ConsultoriaRoute
   '/solucoes': typeof SolucoesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/comunidade' | '/consultoria' | '/solucoes'
+  fullPaths: '/' | '/catalogo' | '/comunidade' | '/consultoria' | '/solucoes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/comunidade' | '/consultoria' | '/solucoes'
-  id: '__root__' | '/' | '/comunidade' | '/consultoria' | '/solucoes'
+  to: '/' | '/catalogo' | '/comunidade' | '/consultoria' | '/solucoes'
+  id:
+    | '__root__'
+    | '/'
+    | '/catalogo'
+    | '/comunidade'
+    | '/consultoria'
+    | '/solucoes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CatalogoRoute: typeof CatalogoRoute
   ComunidadeRoute: typeof ComunidadeRoute
   ConsultoriaRoute: typeof ConsultoriaRoute
   SolucoesRoute: typeof SolucoesRoute
@@ -92,6 +108,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComunidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/catalogo': {
+      id: '/catalogo'
+      path: '/catalogo'
+      fullPath: '/catalogo'
+      preLoaderRoute: typeof CatalogoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -104,6 +127,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CatalogoRoute: CatalogoRoute,
   ComunidadeRoute: ComunidadeRoute,
   ConsultoriaRoute: ConsultoriaRoute,
   SolucoesRoute: SolucoesRoute,
