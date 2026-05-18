@@ -6,8 +6,7 @@ import logo from "@/assets/flytech-logo.png";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/solucoes", label: "Soluções" },
-  { to: "/catalogo", label: "Catálogo" },
+  { to: "/catalogo", label: "Soluções" },
   { to: "/consultoria", label: "Consultoria" },
   { to: "/comunidade", label: "Comunidade" },
 ] as const;
