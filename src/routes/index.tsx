@@ -147,28 +147,6 @@ function HomePage() {
         </div>
       </Section>
 
-      {/* TEAM */}
-      <Section>
-        <FadeIn><SectionTitle eyebrow="Equipe" title="Quem está por trás da FlyTech" /></FadeIn>
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {[
-            { name: "Gabriel", role: "Tecnologia", bio: "Líder técnico responsável pelo desenvolvimento da plataforma de IA e automação.", initials: "GA" },
-            { name: "Victor Hugo", role: "Estratégia", bio: "Responsável pela visão estratégica e direcionamento de negócios da FlyTech.", initials: "VH" },
-            { name: "Jorge Machado", role: "Operações", bio: "Gerencia processos operacionais e implementação de soluções para clientes.", initials: "JM" },
-          ].map((m, i) => (
-            <FadeIn key={m.name} delay={i * 0.08}>
-              <div className="glass card-hover h-full rounded-2xl p-6 text-center">
-                <div className="mx-auto grid h-20 w-20 place-items-center rounded-full text-xl font-bold text-white" style={{ background: "var(--gradient-primary)" }}>
-                  {m.initials}
-                </div>
-                <h3 className="mt-4 text-lg font-semibold">{m.name}</h3>
-                <p className="text-xs uppercase tracking-wide text-[color:var(--cyan)]">{m.role}</p>
-                <p className="mt-3 text-sm text-muted-foreground">{m.bio}</p>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-      </Section>
 
       {/* FINAL CTA */}
       <Section>
