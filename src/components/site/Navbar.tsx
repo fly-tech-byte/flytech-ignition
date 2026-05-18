@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, ShoppingCart, Zap, X } from "lucide-react";
+import { Menu, ShoppingCart, X } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/lib/cart";
+import logo from "@/assets/flytech-logo.png";
 
 const links = [
   { to: "/", label: "Home" },
